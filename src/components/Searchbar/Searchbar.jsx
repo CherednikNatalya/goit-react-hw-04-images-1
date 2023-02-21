@@ -20,7 +20,7 @@ const [formSearch, setFormSearch] =useState ('')
       return;
     }
     onSubmit(formSearch);
-    setFormSearch({formSearch:''})
+    setFormSearch('')
 }
 
 
