@@ -62,57 +62,6 @@ useEffect (()=>{
 },[searchQuery, page])
 
 
-
-  // useEffect(() => {
-    
-  // const fetchData = async ({ page = 1, searchQuery = '' }) => {
-  //   setStatus(STATUS.pending);
-    
-  //   try {
-  //     const requestData = await fetchPichureData(page, searchQuery);
-  //     if (requestData.data.total === 0) {
-  //       setStatus(STATUS.rejected);
-  //       Notiflix.Notify.failure('No images');
-  //       return;
-  //     }
-      
-  //     setImgData(prevState => [...prevState, ...requestData.data.hits])
-  //     setStatus(STATUS.success);
-      
-  //   } catch (error) {
-  //     setStatus(STATUS.rejected);
-  //     Notiflix.Notify.failure('No images');
-  //   }
-  // };
-  // }, [searchQuery, page]);
-
-  
-  // const fetchData = async () => {
-  //   setStatus( STATUS.pending);
-    
-  //   try {
-  //     const requestData = await fetchPichureData(searchQuery, page);
-  //     if (requestData.data.total === 0) {
-  //       this.setState({
-  //         status: STATUS.rejected,
-  //       });
-  //       Notiflix.Notify.failure('No images');
-  //       return;
-  //     }
-  //     this.setState(({ imgData: prevData }) => ({
-  //       imgData: [...prevData, ...requestData.data.hits],
-  //       status: STATUS.success,
-  //     }));
-  //   } catch (error) {
-  //     this.setState({
-  //       status: STATUS.rejected,
-  //     });
-  //     Notiflix.Notify.failure('No images');
-  //   }
-  // };
-
-
-
   const loadMore = () => {
     setPage(prevState => prevState + 1);
   };
