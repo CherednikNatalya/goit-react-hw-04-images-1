@@ -18,7 +18,7 @@ const STATUS = {
 };
 
 const API_KEY = '31541189-0a437f1c4a0bdb60103b05fd6';
-const BASE_URL = 'https://pixabay.com/api'
+const BASE_URL = 'https://pixabay.com/api/'
 
 export const App =() => {
  
