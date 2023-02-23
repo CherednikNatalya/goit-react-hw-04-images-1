@@ -24,3 +24,9 @@
   .button:focus {
     background-color: #303f9f;
   }
+
+  .but{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

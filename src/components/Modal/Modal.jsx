@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import css from './Modal.module.css';
 import { createPortal } from 'react-dom';
-
+import PropTypes from 'prop-types'
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -40,6 +40,14 @@ return ()=> {
       modalRoot
     );
   }
+
+
+  Modal.prototype = {
+    onClose: PropTypes.func.isRequired, 
+    modalImage: PropTypes.string.isRequired,
+    altPhotos: PropTypes.string.isRequired
+  }
+ 
 
   
 
