@@ -2,7 +2,7 @@ import { useState } from "react";
 import css from '../Searchbar/Searchbar.module.css'
 import Notiflix from 'notiflix';
 import { ImSearch } from 'react-icons/im';
-
+import PropTypes from 'prop-types'
 
 
 export const Searchbar =({onSubmit}) => {
@@ -45,9 +45,11 @@ const [formSearch, setFormSearch] =useState ('')
     </form>
   </header>
   )
-
 }
 
+Searchbar.prototype ={
+  onSubmit: PropTypes.func.isRequired,
+}
 
 
 

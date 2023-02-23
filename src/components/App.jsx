@@ -3,7 +3,8 @@ import {Searchbar} from './Searchbar/Searchbar'
 import {ImageGallery} from './ImageGallery/ImageGallery'
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
-// import { fetchPichureData } from '../services/service';
+// import { Section } from './Section/Section';
+import css from '../components/App.module.css'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Notiflix from 'notiflix';
@@ -34,6 +35,9 @@ export const App =() => {
 useEffect (()=>{
   const handelFetch = async serchValue => {
     try {
+      if(searchQuery ===''){
+        return
+      }
       setStatus(STATUS.pending);
       const { data } = await axios.get(
         `${BASE_URL}?key=${API_KEY}&per_page=12&page=${page}&q=${serchValue}&image_type=photo&pretty=true`
@@ -77,8 +81,9 @@ useEffect (()=>{
 
 
   return (
-    <>
+    <div className={css.App}>
       <Searchbar onSubmit={onSubmit}/>
+
       <ImageGallery imgData= {imgData}/>
 
       {status === STATUS.pending && <Loader />}
@@ -99,7 +104,8 @@ useEffect (()=>{
           pauseOnHover
           theme="colored"
         />
-    </>
+       
+    </div>
   )
 }  
   
